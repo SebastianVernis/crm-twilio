@@ -1,0 +1,21 @@
+{
+  "name": "crm-backend",
+  "version": "1.0.0",
+  "description": "Backend server for the CRM with Twilio integration.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "crm",
+    "twilio"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "twilio": "^4.19.0"
+  }
+}
