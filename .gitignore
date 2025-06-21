@@ -3,3 +3,8 @@
 
 # Archivo de variables de entorno (Contiene secretos)
 /backend/.env
+
+# Log files
+/backend/logs/
+/backend/server.log
+*.log
