@@ -6,11 +6,13 @@
       "maxDuration": 30
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/backend/server.js"
-    },
+      "source": "/api/(.*)",
+      "destination": "/backend/server.js"
+    }
+  ],
+  "routes": [
     {
       "src": "/(.*)",
       "dest": "/frontend/$1"
@@ -18,6 +20,5 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "outputDirectory": "frontend"
+  }
 }
