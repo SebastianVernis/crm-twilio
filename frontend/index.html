@@ -3,42 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRM con Dashboard de Administrador</title>
-    <style>
-        :root { --primary-color: #1a73e8; --secondary-color: #f8f9fa; --font-color: #3c4043; --border-color: #dfe1e5; --danger-color: #d93025; --success-color: #1e8e3e; --warning-color: #f9ab00; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto; background-color: #f4f7f9; margin: 0; -webkit-touch-callout: none; }
-        .hidden { display: none !important; }
-        #app-container, #login-container { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; transition: filter 0.2s ease-out; }
-        ::selection, ::-moz-selection { background: transparent; }
-        .security-blur { filter: blur(8px); pointer-events: none; }
-        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); display: flex; justify-content: center; align-items: center; z-index: 9990; }
-        .modal-content { background: white; padding: 25px; border-radius: 12px; width: 90%; max-width: 500px; }
-        .modal-actions { margin-top: 20px; display: flex; justify-content: flex-end; }
-        .modal-actions button { margin-left: 10px; }
-        #login-container, #app-container { max-width: 1300px; margin: 20px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
-        #login-container { max-width: 360px; text-align: center; }
-        h1, h2, h3 { color: var(--primary-color); }
-        h2 { border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; margin-bottom: 15px; }
-        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 8px; box-sizing: border-box; }
-        button { padding: 12px 22px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; background-color: var(--primary-color); color: white; }
-        .module { background-color: var(--secondary-color); padding: 20px; border-radius: 8px; margin-top: 20px; }
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
-        .stat-card { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .stat-value { font-size: 36px; font-weight: bold; color: var(--primary-color); display: block; }
-        .stat-label { font-size: 14px; color: #5f6368; }
-        #status-breakdown { list-style: none; padding: 0; }
-        #status-breakdown li { display: flex; justify-content: space-between; padding: 10px; background: white; margin-bottom: 5px; border-radius: 5px; }
-        #table-container { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        th, td { padding: 14px; border: 1px solid var(--border-color); text-align: left; white-space: nowrap; }
-        .status-badge { padding: 4px 10px; border-radius: 12px; color: white; font-size: 12px; font-weight: bold; }
-        .status-Pendiente { background-color: #808080; }
-        .status-Contactado { background-color: var(--success-color); }
-        .status-Requiere_Seguimiento { background-color: var(--warning-color); color: #333; }
-        .status-No_Interesado { background-color: var(--danger-color); }
-    </style>
+    <title>CRM Twilio - Advanced Spoof Calling System</title>
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/app.js" as="script">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>">
 </head>
-<body oncontextmenu="return false;">
-<!-- ...El contenido completo de index.html que te proporcioné antes va aquí... -->
+<body>
+    <!-- Login Container -->
+    <div id="login-container" class="container login-container">
+        <h1><i class="fas fa-phone-alt"></i> CRM Twilio</h1>
+        <p>Advanced Spoof Calling System</p>
+        
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuario" required autocomplete="username">
+            <input type="password" id="password" placeholder="Contraseña" required autocomplete="current-password">
+            <button type="submit">
+                <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+            </button>
+        </form>
+        
+        <div style="margin-top: 20px; font-size: 12px; color: #666;">
+            <p><strong>Demo Credentials:</strong></p>
+            <p>Admin: admin / admin123</p>
+            <p>Asesor: asesor / asesor123</p>
+        </div>
+    </div>
+
+    <!-- Main Application Container -->
+    <div id="app-container" class="container hidden">
+        <!-- Header -->
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <div>
+                <h1><i class="fas fa-phone-alt"></i> CRM Twilio Pro</h1>
+                <p>Advanced Spoof Calling & Communication System</p>
+            </div>
+            <div style="text-align: right;">
+                <span id="user-info" style="margin-right: 15px; font-weight: 500;"></span>
+                <button id="logout-btn" class="btn-secondary">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Stats -->
+        <div class="dashboard-grid">
+            <div class="stat-card">
+                <span id="total-contacts" class="stat-value">0</span>
+                <span class="stat-label">Total Contactos</span>
+            </div>
+            <div class="stat-card">
+                <span id="contacted-today" class="stat-value">0</span>
+                <span class="stat-label">Contactados Hoy</span>
+            </div>
+            <div class="stat-card">
+                <span id="pending-followup" class="stat-value">0</span>
+                <span class="stat-label">Seguimiento Pendiente</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-value">
+                    <i class="fas fa-shield-alt" style="color: #1e8e3e;"></i>
+                </span>
+                <span class="stat-label">Sistema Seguro</span>
+            </div>
+        </div>
+
+        <!-- Standard Communication Module -->
+        <div class="module">
+            <h2><i class="fas fa-comments"></i> Comunicación Estándar</h2>
+            
+            <!-- Contact Management -->
+            <div style="margin-bottom: 20px;">
+                <h3>Gestión de Contactos</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr auto auto; gap: 10px; align-items: end;">
+                    <input type="text" id="search-contacts" placeholder="Buscar contactos...">
+                    <select id="status-filter">
+                        <option value="all">Todos los estados</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Contactado">Contactado</option>
+                        <option value="Requiere_Seguimiento">Requiere Seguimiento</option>
+                        <option value="No_Interesado">No Interesado</option>
+                    </select>
+                    <button class="btn-success admin-only">
+                        <i class="fas fa-plus"></i> Nuevo Contacto
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-download"></i> Exportar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contacts Table -->
+            <div id="table-container">
+                <table id="contacts-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Estado</th>
+                            <th>Notas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Contacts will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Status Breakdown -->
+        <div class="module">
+            <h3><i class="fas fa-chart-pie"></i> Desglose por Estado</h3>
+            <ul id="status-breakdown">
+                <!-- Status breakdown will be populated by JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="module admin-only">
+            <h3><i class="fas fa-tachometer-alt"></i> Métricas de Rendimiento</h3>
+            <div class="dashboard-grid">
+                <div class="stat-card">
+                    <span class="stat-value">98.5%</span>
+                    <span class="stat-label">Uptime</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">45ms</span>
+                    <span class="stat-label">Latencia Promedio</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">1,247</span>
+                    <span class="stat-label">Llamadas Hoy</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value">892</span>
+                    <span class="stat-label">SMS Enviados</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Health -->
+        <div class="module admin-only">
+            <h3><i class="fas fa-heartbeat"></i> Estado del Sistema</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div style="text-align: center;">
+                    <i class="fas fa-server" style="font-size: 2em; color: #1e8e3e; margin-bottom: 8px;"></i>
+                    <div><strong>Servidor</strong></div>
+                    <div style="color: #1e8e3e;">Operativo</div>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-database" style="font-size: 2em; color: #1e8e3e; margin-bottom: 8px;"></i>
+                    <div><strong>Base de Datos</strong></div>
+                    <div style="color: #1e8e3e;">Conectada</div>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-cloud" style="font-size: 2em; color: #1e8e3e; margin-bottom: 8px;"></i>
+                    <div><strong>Twilio API</strong></div>
+                    <div style="color: #1e8e3e;">Activa</div>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-shield-alt" style="font-size: 2em; color: #1e8e3e; margin-bottom: 8px;"></i>
+                    <div><strong>Seguridad</strong></div>
+                    <div style="color: #1e8e3e;">Protegido</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/spoofCalling.js"></script>
+    
+    <!-- Performance monitoring -->
+    <script>
+        // Performance monitoring
+        window.addEventListener('load', () => {
+            if ('performance' in window) {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+            }
+        });
+
+        // Error tracking
+        window.addEventListener('error', (e) => {
+            console.error('Global error:', e.error);
+            // In production, send to error tracking service
+        });
+
+        // Unhandled promise rejection tracking
+        window.addEventListener('unhandledrejection', (e) => {
+            console.error('Unhandled promise rejection:', e.reason);
+            // In production, send to error tracking service
+        });
+    </script>
 </body>
 </html>

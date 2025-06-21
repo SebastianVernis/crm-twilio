@@ -1,0 +1,19 @@
+[33mwarn[39m: TwilioService running in DEMO MODE - no actual calls/SMS will be sent {"service":"crm-twilio","timestamp":"2025-06-21 12:40:14"}
+[33mwarn[39m: TwilioService running in DEMO MODE - no actual calls/SMS will be sent {"service":"crm-twilio","timestamp":"2025-06-21 12:40:14"}
+[32minfo[39m: Twilio service initialized successfully {"service":"crm-twilio","timestamp":"2025-06-21 12:40:14"}
+[32minfo[39m: Server started successfully {"environment":"development","pid":1250,"port":"3001","service":"crm-twilio","timestamp":"2025-06-21 12:40:14"}
+[32minfo[39m: Starting cache warming... {"service":"crm-twilio","timestamp":"2025-06-21 12:40:14"}
+[32minfo[39m: Cache warming completed {"service":"crm-twilio","timestamp":"2025-06-21 12:40:14"}
+[32minfo[39m: Application ready to accept connections {"service":"crm-twilio","timestamp":"2025-06-21 12:40:14"}
+ValidationError: The 'X-Forwarded-For' header is set but the Express 'trust proxy' setting is false (default). This could indicate a misconfiguration which would prevent express-rate-limit from accurately identifying users. See https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/ for more information.
+    at Object.xForwardedForHeader (/home/user/workspace/backend/node_modules/express-rate-limit/dist/index.cjs:185:13)
+    at wrappedValidations.<computed> [as xForwardedForHeader] (/home/user/workspace/backend/node_modules/express-rate-limit/dist/index.cjs:397:22)
+    at Object.keyGenerator (/home/user/workspace/backend/node_modules/express-rate-limit/dist/index.cjs:658:20)
+    at /home/user/workspace/backend/node_modules/express-rate-limit/dist/index.cjs:710:32
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/user/workspace/backend/node_modules/express-rate-limit/dist/index.cjs:691:5 {
+  code: 'ERR_ERL_UNEXPECTED_X_FORWARDED_FOR',
+  help: 'https://express-rate-limit.github.io/ERR_ERL_UNEXPECTED_X_FORWARDED_FOR/'
+}
+[32minfo[39m: Request completed {"duration":"10ms","ip":"127.0.0.1","method":"HEAD","service":"crm-twilio","status":200,"timestamp":"2025-06-21 12:40:39","url":"/","userAgent":"curl/7.81.0"}
+[32minfo[39m: Request completed {"duration":"14ms","ip":"127.0.0.1","method":"GET","service":"crm-twilio","status":200,"timestamp":"2025-06-21 12:41:02","url":"/","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM con Dashboard de Administrador</title>
+    <style>
+        :root { --primary-color: #1a73e8; --secondary-color: #f8f9fa; --font-color: #3c4043; --border-color: #dfe1e5; --danger-color: #d93025; --success-color: #1e8e3e; --warning-color: #f9ab00; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto; background-color: #f4f7f9; margin: 0; -webkit-touch-callout: none; }
+        .hidden { display: none !important; }
+        #app-container, #login-container { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; transition: filter 0.2s ease-out; }
+        ::selection, ::-moz-selection { background: transparent; }
+        .security-blur { filter: blur(8px); pointer-events: none; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); display: flex; justify-content: center; align-items: center; z-index: 9990; }
+        .modal-content { background: white; padding: 25px; border-radius: 12px; width: 90%; max-width: 500px; }
+        .modal-actions { margin-top: 20px; display: flex; justify-content: flex-end; }
+        .modal-actions button { margin-left: 10px; }
+        #login-container, #app-container { max-width: 1300px; margin: 20px auto; padding: 30px; background: white; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        #login-container { max-width: 360px; text-align: center; }
+        h1, h2, h3 { color: var(--primary-color); }
+        h2 { border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; margin-bottom: 15px; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 8px; box-sizing: border-box; }
+        button { padding: 12px 22px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; background-color: var(--primary-color); color: white; }
+        .module { background-color: var(--secondary-color); padding: 20px; border-radius: 8px; margin-top: 20px; }
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
+        .stat-card { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .stat-value { font-size: 36px; font-weight: bold; color: var(--primary-color); display: block; }
+        .stat-label { font-size: 14px; color: #5f6368; }
+        #status-breakdown { list-style: none; padding: 0; }
+        #status-breakdown li { display: flex; justify-content: space-between; padding: 10px; background: white; margin-bottom: 5px; border-radius: 5px; }
+        #table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 14px; border: 1px solid var(--border-color); text-align: left; white-space: nowrap; }
+        .status-badge { padding: 4px 10px; border-radius: 12px; color: white; font-size: 12px; font-weight: bold; }
+        .status-Pendiente { background-color: #808080; }
+        .status-Contactado { background-color: var(--success-color); }
+        .status-Requiere_Seguimiento { background-color: var(--warning-color); color: #333; }
+        .status-No_Interesado { background-color: var(--danger-color); }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+<!-- ...El contenido completo de index.html que te proporcioné antes va aquí... -->
+</body>
+</html>

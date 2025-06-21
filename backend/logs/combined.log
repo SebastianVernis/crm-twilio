@@ -1,0 +1,69 @@
+{
+  message: 'TwilioService running in DEMO MODE - no actual calls/SMS will be sent',
+  level: 'warn',
+  service: 'crm-twilio',
+  timestamp: '2025-06-21 12:40:14'
+}
+{
+  message: 'TwilioService running in DEMO MODE - no actual calls/SMS will be sent',
+  level: 'warn',
+  service: 'crm-twilio',
+  timestamp: '2025-06-21 12:40:14'
+}
+{
+  message: 'Twilio service initialized successfully',
+  level: 'info',
+  service: 'crm-twilio',
+  timestamp: '2025-06-21 12:40:14'
+}
+{
+  service: 'crm-twilio',
+  port: '3001',
+  environment: 'development',
+  pid: 1250,
+  level: 'info',
+  message: 'Server started successfully',
+  timestamp: '2025-06-21 12:40:14'
+}
+{
+  message: 'Starting cache warming...',
+  level: 'info',
+  service: 'crm-twilio',
+  timestamp: '2025-06-21 12:40:14'
+}
+{
+  message: 'Cache warming completed',
+  level: 'info',
+  service: 'crm-twilio',
+  timestamp: '2025-06-21 12:40:14'
+}
+{
+  message: 'Application ready to accept connections',
+  level: 'info',
+  service: 'crm-twilio',
+  timestamp: '2025-06-21 12:40:14'
+}
+{
+  service: 'crm-twilio',
+  method: 'HEAD',
+  url: '/',
+  status: 200,
+  duration: '10ms',
+  ip: '127.0.0.1',
+  userAgent: 'curl/7.81.0',
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-21 12:40:39'
+}
+{
+  service: 'crm-twilio',
+  method: 'GET',
+  url: '/',
+  status: 200,
+  duration: '14ms',
+  ip: '127.0.0.1',
+  userAgent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+  level: 'info',
+  message: 'Request completed',
+  timestamp: '2025-06-21 12:41:02'
+}
