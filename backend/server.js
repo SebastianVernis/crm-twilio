@@ -32,6 +32,9 @@ if (missingEnvVars.length > 0) {
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Trust proxy for rate limiting (required for X-Forwarded-For header)
+app.set('trust proxy', 1);
+
 // Initialize Twilio service
 let twilioService;
 try {
