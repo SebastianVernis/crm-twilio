@@ -175,6 +175,28 @@ class TwilioService {
         try {
             const sessionId = uuidv4();
             
+            if (this.demoMode) {
+                // Demo mode - simulate spoof call
+                const demoCallId = `demo_spoof_call_${uuidv4()}`;
+                
+                logger.info('Spoof call initiated successfully (DEMO MODE)', {
+                    sessionId: sessionId,
+                    callId: demoCallId,
+                    to: to,
+                    spoofNumber: spoofNumber,
+                    message: options.message || 'Demo spoof call'
+                });
+
+                return {
+                    success: true,
+                    sessionId: sessionId,
+                    callId: demoCallId,
+                    status: 'initiated',
+                    spoofNumber: spoofNumber,
+                    message: 'Spoof call initiated successfully (Demo Mode)'
+                };
+            }
+            
             // Create TwiML for the spoof call
             const twiml = new Twilio.twiml.VoiceResponse();
             
