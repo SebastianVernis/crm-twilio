@@ -257,15 +257,13 @@ class CRMApp {
         button.disabled = true;
 
         try {
-            const response = await fetch(`${this.baseUrl}/make-call`, {
+            const response = await fetch(`${this.baseUrl}/crm/api/call`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    to: contact.phone,
-                    message: `Calling ${contact.name}`,
-                    record: true
+                    to: contact.phone
                 })
             });
 
@@ -275,7 +273,7 @@ class CRMApp {
                 this.showToast(`Call initiated to ${contact.name}`, 'success');
                 this.showAfterCallModal(contact);
             } else {
-                this.showToast(`Error: ${result.message}`, 'error');
+                this.showToast(`Error: ${result.error}`, 'error');
             }
         } catch (error) {
             console.error('Error making call:', error);

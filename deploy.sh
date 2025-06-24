@@ -5,7 +5,7 @@ REMOTE_HOST="access-5018020518.webspace-host.com"
 REMOTE_USER="a951193"
 REMOTE_PASSWORD="Svernis1"
 REMOTE_PORT="22"
-REMOTE_PATH="/home/a951193/crm-twilio"
+REMOTE_PATH="/homepages/24/d4299087580/htdocs/Apps/crm.sebastianvernis.com"
 LOCAL_PATH="/home/user/workspace"
 
 echo "🚀 Starting CRM Twilio Deployment..."
@@ -57,7 +57,7 @@ if ! command -v pm2 &> /dev/null; then
 fi
 
 # Navigate to application directory
-cd ~/crm-twilio
+cd /homepages/24/d4299087580/htdocs/Apps/crm.sebastianvernis.com
 
 # Install dependencies
 echo "📦 Installing dependencies..."
@@ -110,12 +110,8 @@ echo "📤 Uploading files to remote server..."
 
 # Create SFTP batch file
 cat > sftp_commands.txt << EOF
-cd /home/a951193
-rm -rf crm-twilio-backup
-mkdir crm-twilio-backup
-put -r crm-twilio-deploy crm-twilio-backup/
-rm -rf crm-twilio
-mv crm-twilio-backup/crm-twilio-deploy crm-twilio
+cd /homepages/24/d4299087580/htdocs/Apps/crm.sebastianvernis.com
+put -r crm-twilio-deploy/* .
 quit
 EOF
 
@@ -127,7 +123,7 @@ if [ $? -eq 0 ]; then
     
     echo "🔧 Running remote setup..."
     # Execute remote setup script
-    sshpass -p "$REMOTE_PASSWORD" ssh -o StrictHostKeyChecking=no -p $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST "cd ~/crm-twilio && chmod +x remote-setup.sh && ./remote-setup.sh"
+    sshpass -p "$REMOTE_PASSWORD" ssh -o StrictHostKeyChecking=no -p $REMOTE_PORT $REMOTE_USER@$REMOTE_HOST "cd /homepages/24/d4299087580/htdocs/Apps/crm.sebastianvernis.com && chmod +x remote-setup.sh && ./remote-setup.sh"
     
     if [ $? -eq 0 ]; then
         echo "🎉 Deployment completed successfully!"

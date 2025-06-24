@@ -1,0 +1,21 @@
+DirectoryIndex index.html
+Options -Indexes
+
+# Enable URL rewriting
+RewriteEngine On
+
+# API routes
+RewriteRule ^api/(.*)$ api.php [QSA,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# MIME types
+AddType application/json .json
+
+# Error pages
+ErrorDocument 404 /index.html
