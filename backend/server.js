@@ -19,6 +19,15 @@ const app = express();
 app.use(cors()); // Permitir peticiones desde el frontend
 app.use(express.json());
 
+// --- Root endpoint for testing ---
+app.get('/', (req, res) => {
+    res.json({ 
+        message: 'CRM Twilio API Server is running!', 
+        version: '1.0.0',
+        endpoints: ['/send-sms', '/make-call']
+    });
+});
+
 // --- Endpoint para enviar SMS ---
 app.post('/send-sms', async (req, res) => {
     const { to, body } = req.body;

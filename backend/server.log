@@ -1,0 +1,19 @@
+Servidor de Twilio escuchando en el puerto 3001
+Error al enviar SMS: RestException [Error]: Authentication Error - invalid username
+    at success (/home/user/workspace/backend/node_modules/twilio/lib/base/Version.js:79:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/user/workspace/backend/server.js:39:9 {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
+Error al iniciar la llamada: RestException [Error]: Authentication Error - invalid username
+    at success (/home/user/workspace/backend/node_modules/twilio/lib/base/Version.js:79:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/user/workspace/backend/server.js:64:9 {
+  status: 401,
+  code: 20003,
+  moreInfo: 'https://www.twilio.com/docs/errors/20003',
+  details: undefined
+}
